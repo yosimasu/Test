@@ -8,3 +8,7 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm install -g bats
       - run: bats -v
+      - name: Retrieve Secrets
+        env:
+          super_secret: ${{ secrets.SUPER_SECRET }}
+        run: echo "$super_secret"
